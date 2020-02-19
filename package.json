@@ -1,0 +1,46 @@
+{
+  "name": "@zivileu/react-dropdown",
+  "version": "1.0.0",
+  "description": "React dropdown component",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "storybook": "start-storybook -p 6006"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZivileU/react-dropdown.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "dropdown"
+  ],
+  "author": "Zivile Utkeviciute <zivile.utkeviciute@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZivileU/react-dropdown/issues"
+  },
+  "homepage": "https://github.com/ZivileU/react-dropdown#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "babel-loader": "^8.0.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "dependencies": {}
+}
