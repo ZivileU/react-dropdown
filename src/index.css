@@ -29,7 +29,7 @@
   justify-content: space-between;
   font-size: 14px;
   font-weight: 600;
-  color: hsl(222, 23%, 19%);;
+  color: hsl(222, 18%, 34%);
 }
 
 .dropdown .dropdownButton:disabled {
@@ -87,6 +87,7 @@
   border-radius: 3px;
   max-height: 302px;
   overflow-y: auto;
+  box-shadow:rgba(84, 93, 115, 0.1) 5px 10px 15px 0px;
 }
 
 .dropdown .items .item {
@@ -99,7 +100,7 @@
   height: 40px;
   font-weight: 600;
   font-size: 14px;
-  color: hsl(222, 23%, 19%);
+  color: hsl(222, 10%, 50%);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -115,4 +116,18 @@
   background-color: hsl(156, 28%, 94%);
   outline: 0;
   box-shadow: none;
+}
+
+.dropdown ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown ::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin: 8px;
+}
+
+.dropdown ::-webkit-scrollbar-thumb {
+  background-color: hsl(222, 11%, 69%);
+  border-radius: 4px;
 }
