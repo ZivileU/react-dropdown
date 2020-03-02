@@ -18,7 +18,7 @@ const Dropdown = ({
   onSelectOption
 }) => {
   const selected = selectedOption?.displayName ? 'selected' : ''
-  const {areOptionsVisible, onSetAreOptionsVisible} = useState()
+  const [areOptionsVisible, onSetAreOptionsVisible] = useState(false)
   return (
     <div
       className={classNames(
@@ -38,7 +38,7 @@ const Dropdown = ({
       <button
         {...((!isDisabled && options && (options.length > 0))
           && {
-            onClick: (() => console.log('click'))
+            onClick: (() => onSetAreOptionsVisible(!areOptionsVisible))
           }
         )}
         type='button'
