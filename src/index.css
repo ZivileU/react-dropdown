@@ -1,3 +1,121 @@
-.title {
-    color: red
+.dropdown {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  min-width: 80px;
+}
+
+.dropdown .displayLabel {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(222, 14%, 44%);
+  line-height: 20px;
+}
+
+.dropdown .dropdownButton {
+  height: 40px;
+  width: 272px;
+  padding: 0 12px;
+  border: 2px solid hsl(222, 14%, 90%);
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(222, 23%, 19%);;
+}
+
+.dropdown .dropdownButton:disabled {
+  cursor: not-allowed;
+  outline: 0;
+  box-shadow: none;
+  color: hsl(222, 10%, 57%);
+  background-color: hsl(222, 7%, 97%);
+  border-color: hsl(222, 12%, 93%);
+}
+
+.dropdown .dropdownButton:not(.selected) {
+  color: hsl(222, 10%, 50%);
+}
+
+.dropdown .dropdownButton:enabled:hover {
+  border-color: hsl(266, 64%, 80%);
+}
+
+.dropdown .dropdownButton:focus:not(:active) {
+  box-shadow: 0 0 0 1.5px hsl(18, 90%, 76%);
+}
+
+.dropdown .dropdownButton.dropped {
+  border-color: hsl(266, 65%, 64%);
+}
+
+.dropdown .dropdownButton .dropdownLabel {
+  padding-right: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.dropdown .dropdownButton .icon svg {
+  vertical-align: middle;
+}
+
+.dropdown .dropdownButton:disabled .icon svg path {
+  fill: hsl(222, 11%, 69%);
+}
+
+.dropdown .itemsWrapper {
+  position: absolute;
+  top: 100%;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.dropdown .items {
+  display: block;
+  list-style-type: none;
+  padding: 8px 0;
+  background-color: hsl(0, 0%, 100%);
+  margin: 0;
+  border: 2px solid hsl(222, 14%, 90%);
+  border-radius: 3px;
+  max-height: 302px;
+  overflow-y: auto;
+}
+
+.dropdown .items .item {
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 100%);
+  text-align: left;
+  padding: 0 16px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  color: hsl(222, 23%, 19%);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dropdown .items .item:active,
+.dropdown .items .selectedItem {
+  background-color: hsl(156, 28%, 88%);
+}
+
+.dropdown .items .item:hover,
+.dropdown .items .item:focus:not(:active) {
+  background-color: hsl(156, 28%, 94%);
+  outline: 0;
+  box-shadow: none;
 }
