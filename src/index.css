@@ -65,12 +65,9 @@
   text-align: left;
 }
 
-.dropdown .dropdownButton .icon svg {
-  vertical-align: middle;
-}
-
-.dropdown .dropdownButton:disabled .icon svg path {
-  fill: hsl(222, 11%, 69%);
+.dropdown .dropdownButton .icon {
+  color: hsl(222, 11%, 69%);
+  font-size: large;
 }
 
 .dropdown .itemsWrapper {

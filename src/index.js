@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import {string, bool, func, arrayOf, shape, number, oneOfType} from 'prop-types'
 import classNames from 'classnames'
 import AnimateHeight from 'react-animate-height'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import './index.css'
 
 const Dropdown = ({
@@ -48,9 +50,9 @@ const Dropdown = ({
         )}
       >
         <span className='dropdownLabel'>
-          <span>{(selectedOption?.displayName) || placeholder}</span>
+          {(selectedOption?.displayName) || placeholder}
         </span>
-        <i className="fas fa-caret-up"></i>
+        <FontAwesomeIcon className='icon' icon={faCaretDown} />
       </button>
       <div className='itemsWrapper'>
         <AnimateHeight
