@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import {string, bool, func, arrayOf, shape, number, oneOfType} from 'prop-types'
-import classNames from 'classnames'
 import AnimateHeight from 'react-animate-height'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
+import {arrayOf, bool, func, number, oneOfType, shape, string} from 'prop-types'
+
 import './index.css'
 
 const Dropdown = ({
@@ -31,7 +32,7 @@ const Dropdown = ({
       }))}
     >
       {label && (
-        <label className='displayLabel'>
+        <label className='displayLabel' htmlFor='dropdown'>
           {label}
         </label>
       )}
@@ -93,12 +94,10 @@ Dropdown.propTypes = {
   isDisabled: bool,
   isSmall: bool,
   areOptionsVisible: bool,
-  options: arrayOf(
-    shape({
-      displayName: string.isRequired,
-      value: oneOfType([string, number]).isRequired
-    }),
-  ).isRequired,
+  options: arrayOf(shape({
+    displayName: string.isRequired,
+    value: oneOfType([string, number]).isRequired
+  })).isRequired,
   selectedOption: shape({
     displayName: string.isRequired,
     value: oneOfType([string, number]).isRequired

@@ -87,7 +87,7 @@
   border-radius: 3px;
   max-height: 302px;
   overflow-y: auto;
-  box-shadow:rgba(84, 93, 115, 0.1) 5px 10px 15px 0px;
+  box-shadow: rgba(84, 93, 115, 0.1) 5px 10px 15px 0;
 }
 
 .dropdown .items .item {

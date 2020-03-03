@@ -44,7 +44,7 @@
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addon-storyshots": "^5.3.14",
     "@storybook/addon-storyshots-puppeteer": "^5.3.14",
-    "@storybook/^4.42.0torysource": "^5.3.14",
+    "@storybook/addon-storysource": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
     "@testing-library/jest-dom": "^5.1.1",
@@ -73,6 +73,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "classnames": "^2.2.6",
     "react-animate-height": "^2.0.20"
   },
   "files": [

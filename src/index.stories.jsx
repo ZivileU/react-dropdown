@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+
 import Dropdown from './index'
 
 const placeholder = 'Select an option'
@@ -44,7 +45,7 @@ const options = [
 
 export default {
   title: 'Default dropdown',
-  component: Dropdown,
+  component: Dropdown
 }
 
 export const Default = () => {
