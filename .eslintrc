@@ -1,0 +1,29 @@
+{
+  "extends": ["@bence.a.toth/eslint-config"],
+  "overrides": [
+    {
+      "files": [
+        "webpack.config.js",
+        "jest.config.js"
+      ],
+      "rules": {
+        "import/no-unused-modules": 0
+      }
+    },
+    {
+      "files": ["*.stories.jsx"],
+      "rules": {
+        "import/no-unused-modules": 0,
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": ["*.test.js"],
+      "rules": {
+        "import/no-unused-modules": 0,
+        "import/no-unassigned-import": 0,
+        "react/jsx-filename-extension": 0
+      }
+    }
+  ]
+}
