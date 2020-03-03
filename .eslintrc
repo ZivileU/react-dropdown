@@ -1,7 +1,30 @@
 {
   "extends": ["@bence.a.toth/eslint-config"],
   "rules": {
-    "react/jsx-props-no-spreading": 0
+    "react/jsx-props-no-spreading": 0,
+    "simple-import-sort/sort": [2, {
+      "groups": [
+        [
+          // Side effect imports:
+          "^\\u0000",
+          // Packages, React-related come first:
+          "^react",
+          "^@?\\w",
+          // Absolute internal packages:
+          "^(/.*|$)",
+          // Relative internal packages:
+          // Start with parent imports, put .. last
+          // Other relative imports, same-folder imports and . last.
+          "^\\.\\.(?!/?$)",
+          "^\\.\\./?$",
+          "^\\./(?=.*/)(?!/?$)",
+          "^\\.(?!/?$)",
+          "^\\./?$",
+          // Style imports:
+          "^.+\\.s?css$"
+        ]
+      ]
+    }]
   },
   "overrides": [
     {

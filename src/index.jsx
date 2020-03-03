@@ -4,7 +4,6 @@ import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import {arrayOf, bool, func, number, oneOfType, shape, string} from 'prop-types'
-
 import './index.css'
 
 const Dropdown = ({

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-
 import Dropdown from './index'
 
 const placeholder = 'Select an option'
