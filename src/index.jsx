@@ -36,11 +36,10 @@ const Dropdown = ({
         </label>
       )}
       <button
-        {...((!isDisabled && options && (options.length > 0))
-          && {
-            onClick: (() => onSetAreOptionsVisible(!areOptionsVisible))
-          }
-        )}
+        onClick={
+          (!isDisabled && options && (options.length > 0))
+          && (() => onSetAreOptionsVisible(!areOptionsVisible))
+        }
         type='button'
         title={selectedOption?.displayName}
         disabled={isDisabled}
@@ -66,9 +65,10 @@ const Dropdown = ({
                 <button
                   type='button'
                   title={option.displayName}
-                  className={classNames({
-                    selectedItem: selectedOption?.value === option.value
-                  }, 'item')}
+                  className={classNames(
+                    {selectedItem: selectedOption?.value === option.value},
+                    'item'
+                  )}
                   onClick={(() => {
                     onSelectOption(option)
                     onSetAreOptionsVisible(false)
@@ -83,6 +83,10 @@ const Dropdown = ({
       </div>
     </div>
   )
+}
+
+Dropdown.defaultProps = {
+  placeholder: 'Select an option'
 }
 
 Dropdown.propTypes = {

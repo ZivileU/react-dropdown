@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import Dropdown from './index'
 
-const placeholder = 'Select an option'
-
 const options = [
   {
     displayName: 'Item1',
@@ -54,7 +52,6 @@ export const Default = () => {
       options={options}
       label='Dropdown label'
       selectedOption={selectedOption}
-      placeholder={placeholder}
       onSelectOption={option => {
         onSetSelectedOption({
           displayName: option.displayName,

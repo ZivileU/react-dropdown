@@ -1,16 +1,37 @@
-import '@testing-library/jest-dom'
-import React from 'react'
-import {render, screen} from '@testing-library/react'
-import HelloWorld from './index'
-import './index.css'
+// import '@testing-library/jest-dom'
+// import React from 'react'
+// import {render, screen} from '@testing-library/react'
+// import Dropdown from './index'
+// import './index.css'
 
-describe('HelloWorld component', () => {
-  it('Should say hello', () => {
-    render(<HelloWorld name='Jane Doe' />)
-    expect(screen.getByText('Hello, Jane Doe')).toBeInTheDocument()
-  })
-  it('Should fall back to default name', () => {
-    render(<HelloWorld />)
-    expect(screen.getByText('Hello, John Doe')).toBeInTheDocument()
-  })
-})
+// const defaultOptions = [
+//   {
+//     displayName: 'Item1',
+//     value: 'Item1'
+//   },
+//   {
+//     displayName: 'Item2',
+//     value: 'Item2'
+//   },
+//   {
+//     displayName: 'Item3',
+//     value: 'Item3'
+//   },
+//   {
+//     displayName: 'Item4',
+//     value: 'Item4'
+//   },
+//   {
+//     displayName: 'Item that has a very long name',
+//     value: 'LongItem'
+//   }
+// ]
+
+// eslint-disable-next-line jest/no-commented-out-tests
+// describe('Dropdown component', () => {
+// eslint-disable-next-line jest/no-commented-out-tests
+//   it('Should say hello', () => {
+//     render(<Dropdown options={defaultOptions} />)
+//     expect(screen.getByText().toBeInTheDocument()
+//   })
+// })
