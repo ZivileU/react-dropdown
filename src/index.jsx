@@ -4,6 +4,7 @@ import {faCaretDown} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import {arrayOf, bool, func, number, oneOfType, shape, string} from 'prop-types'
+import useCloseDropdown from './hooks'
 import './index.css'
 
 const Dropdown = ({
@@ -11,38 +12,39 @@ const Dropdown = ({
   id,
   label,
   placeholder,
-  isDisabled,
+  disabled,
   options,
-  isSmall,
   selectedOption,
-  onSelectOption
+  selectOption
 }) => {
   const selected = selectedOption?.displayName ? 'selected' : ''
-  const [areOptionsVisible, onSetAreOptionsVisible] = useState(false)
+  const [dropped, setDropped] = useState(false)
+  const {dropdownReference} = useCloseDropdown(setDropped)
   return (
     <div
       className={classNames(
         'dropdown',
-        className,
-        {small: isSmall}
+        className
       )}
+      ref={dropdownReference}
       {...(id && ({
         'data-test-id': id
       }))}
     >
       {label && (
-        <label className='displayLabel' htmlFor='dropdown'>
+        <label className='displayLabel' htmlFor={id}>
           {label}
         </label>
       )}
       <button
         onClick={
-          (!isDisabled && options && (options.length > 0))
-          && (() => onSetAreOptionsVisible(!areOptionsVisible))
+          ((!disabled && options && (options.length > 0))
+          && (() => setDropped(!dropped)))
+          || undefined
         }
         type='button'
         title={selectedOption?.displayName}
-        disabled={isDisabled}
+        disabled={disabled}
         className={classNames(
           'dropdownButton',
           {selected}
@@ -55,7 +57,7 @@ const Dropdown = ({
       </button>
       <div className='itemsWrapper'>
         <AnimateHeight
-          height={areOptionsVisible ? 'auto' : 0}
+          height={dropped ? 'auto' : 0}
           duration={200}
           easing='ease-in-out'
         >
@@ -70,8 +72,8 @@ const Dropdown = ({
                     'item'
                   )}
                   onClick={(() => {
-                    onSelectOption(option)
-                    onSetAreOptionsVisible(false)
+                    selectOption(option)
+                    setDropped(false)
                   })}
                 >
                   <span>{option.displayName}</span>
@@ -94,9 +96,8 @@ Dropdown.propTypes = {
   id: string,
   label: string,
   placeholder: string,
-  isDisabled: bool,
-  isSmall: bool,
-  areOptionsVisible: bool,
+  disabled: bool,
+  dropped: bool,
   options: arrayOf(shape({
     displayName: string.isRequired,
     value: oneOfType([string, number]).isRequired
@@ -105,7 +106,7 @@ Dropdown.propTypes = {
     displayName: string.isRequired,
     value: oneOfType([string, number]).isRequired
   }),
-  onSelectOption: func.isRequired
+  selectOption: func.isRequired
 }
 
 export default Dropdown
