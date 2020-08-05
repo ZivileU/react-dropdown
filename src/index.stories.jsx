@@ -1,59 +1,55 @@
 import React, {useState} from 'react'
+import {bool, string} from 'prop-types'
 import Dropdown from './index'
 
 const options = [
   {
-    displayName: 'Item1',
-    value: 'Item1'
+    displayName: 'Yellow',
+    value: 'yellow'
   },
   {
-    displayName: 'Item2',
-    value: 'Item2'
+    displayName: 'Orange',
+    value: 'orange'
   },
   {
-    displayName: 'Item3',
-    value: 'Item3'
+    displayName: 'Red',
+    value: 'red'
   },
   {
-    displayName: 'Item4',
-    value: 'Item4'
+    displayName: 'Green',
+    value: 'green'
   },
   {
-    displayName: 'Item5',
-    value: 'Item5'
+    displayName: 'Blue',
+    value: 'blue'
   },
   {
-    displayName: 'Item6',
-    value: 'Item6'
+    displayName: 'Purple',
+    value: 'purple'
   },
   {
-    displayName: 'Item7',
-    value: 'Item7'
+    displayName: 'Pink',
+    value: 'pink'
   },
   {
-    displayName: 'Item8',
-    value: 'Item8'
-  },
-  {
-    displayName: 'Item that has a much longer name than anyone thought it would ever will',
-    value: 'LongItem'
+    displayName: 'A very long color name that does not exist',
+    value: 'LongName'
   }
 ]
 
-export default {
-  title: 'Default dropdown',
-  component: Dropdown
-}
-
-export const Default = () => {
-  const [selectedOption, onSetSelectedOption] = useState(null)
+const Component = ({disabled, className}) => {
+  const [selectedOption, setSelectedOption] = useState(null)
   return (
     <Dropdown
       options={options}
-      label='Dropdown label'
+      disabled={disabled}
+      className={className}
+      label='Rainbow colors'
+      placeholder='Choose favorite rainbow color'
+      id='reactDropdown'
       selectedOption={selectedOption}
-      onSelectOption={option => {
-        onSetSelectedOption({
+      selectOption={option => {
+        setSelectedOption({
           displayName: option.displayName,
           value: option.value
         })
@@ -61,3 +57,21 @@ export const Default = () => {
     />
   )
 }
+
+Component.propTypes = {
+  className: string,
+  disabled: bool
+}
+
+const Default = () => <Component />
+
+const Disabled = () => <Component disabled />
+
+const CustomClassName = () => <Component className='customClassName' />
+
+export default {
+  title: 'Dropdown',
+  component: Component
+}
+
+export {Default, Disabled, CustomClassName}
